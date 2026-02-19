@@ -1892,7 +1892,14 @@ QListWidget::item::selected {
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_8">
                   <item>
-                   <widget class="QComboBox" name="combo_default_overpass"/>
+					<widget class="QComboBox" name="combo_default_overpass">
+                    <property name="editable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="toolTip">
+                     <string>Select a server from the list or type a custom Overpass API URL</string>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </item>
