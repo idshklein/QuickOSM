@@ -64,6 +64,11 @@ class ConfigurationPanel(BasePanel):
         default_server = get_setting('defaultOAPI')
         if default_server:
             index = self.dialog.combo_default_overpass.findText(default_server)
+            if index >= 0:
+                self.dialog.combo_default_overpass.setCurrentIndex(index)
+            else:
+                # Custom server not in the predefined list – show it as-is
+                self.dialog.combo_default_overpass.setCurrentText(default_server)
             self.dialog.combo_default_overpass.setCurrentIndex(index)
         else:
             default_server = self.dialog.combo_default_overpass.currentText()
